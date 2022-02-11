@@ -1,15 +1,15 @@
-import uvicorn
+# import uvicorn
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app import models
-from app.database import engine
+# from app import models
+# from app.database import engine
 from app.routers import post, user, auth, vote
 
-from app.config import settings
+# from app.config import settings
 
 
-models.Base.metadata.create_all(bind=engine)
+# models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 
@@ -28,5 +28,5 @@ app.include_router(user.router)
 app.include_router(auth.router)
 app.include_router(vote.router)
 
-if __name__ == "__main__":
-    uvicorn.run("main:app", reload=True, port=9090)
+# if __name__ == "__main__":
+#     uvicorn.run("main:app", reload=True, port=9090)
